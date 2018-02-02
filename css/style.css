@@ -1,0 +1,157 @@
+@font-face {
+    font-family: "Montserat-Bold";
+    src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+@font-face {
+    font-family: "Montserat-Medium";
+    src: url('../fonts/Montserrat-Medium.ttf');
+}
+
+:root {
+    color: #61B446;
+    color: #5EA249;
+    color: #4A9B30;
+    color: #91DC7A;
+    color: #A7DC97;
+    
+    color: #3E9F57;
+    color: #408F55;
+    color: #2A8943;
+    color: #74D28D;
+    color: #90D2A1;
+
+    color: #83BF4A;
+    color: #7BAC4D;
+    color: #6AA433;
+    color: #AEE17C;
+    color: #BDE19A;
+
+    color: rgb(34, 34, 34);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #83BF4A;
+}
+
+div#game {
+    position: relative;
+    max-width: 500px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+header, footer {
+    height: 20%;
+    font-family: "Montserat-Medium", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+}
+
+header, main, footer {
+    width: 100%;
+    padding: 0 15px
+}
+
+footer {
+    flex-flow: column;
+}
+
+div#control {
+    display: none;
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+}
+
+div.tab {
+    /* border: 1px solid black; */
+    border-radius: 5px;
+    margin: 10px;
+    width: 25%;
+    background: #5EA249;
+    box-shadow: 0 0 0 5px #4A9B30;
+    position: relative;
+}
+
+div.tab:before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.tab__value {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserat-Bold", sans-serif;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.rotate {
+    transform: rotate(360deg);
+    transition-duration: 0.5s;
+}
+
+.fadeIn {
+    opacity: 1;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.shake {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  @keyframes shake {
+    10%, 90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+    
+    20%, 80% {
+      transform: translate3d(2px, 0, 0);
+    }
+  
+    30%, 50%, 70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+  
+    40%, 60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+div#timer {
+    display: flex;
+    justify-content: space-around;
+}
+
+div#timer span {
+    width: 65px;
+    padding: 0px 10px;
+}
